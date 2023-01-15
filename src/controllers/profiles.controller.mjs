@@ -22,6 +22,10 @@ const addProfile = async (req, res) => {
 const updateProfile = async (req, res) => {
 	try {
 		const { id } = req.params;
+		if (!id)
+			return res
+				.status(400)
+				.json({ message: "param: profileID is required to update" });
 		const profile = new Profile({ ...req.body, id });
 		const result = await profile.updateProfile();
 		res.status(200).json(result);

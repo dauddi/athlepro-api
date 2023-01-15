@@ -2,7 +2,7 @@ import profiles from "./profiles.mongo.mjs";
 
 class Profile {
 	constructor(profile) {
-		this.id = profile?.id;
+		this.id = profile.id ?? undefined;
 		this.firstName = profile.firstName;
 		this.lastName = profile.lastName;
 		this.gender = profile.gender;
