@@ -1,0 +1,1 @@
+export { default as profilesRouter } from './profiles.router.mjs';
